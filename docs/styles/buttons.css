@@ -1,0 +1,37 @@
+:root {
+	/* Настройки базовой кнопки */
+
+	--button-color: #B7A7AE; /* Цвет кнопки */
+	--button-text-color: #F6F2F6; /* Цвет текста на кнопке */
+	--button-border-radius: 14px; /* Радиус угла */
+	--button-padding: 5px; /* Внутренние отступы кнопки */
+	--button-anim-time: 0.1s; /* Скорость анимации кнопки */
+}
+
+button {
+	/* Описание базовой кнопки */
+
+	background-color: var(--button-color);
+	color: var(--button-text-color);
+	border-radius: var(--button-border-radius);
+	padding: var(--button-padding);
+	border: 0;
+	appearance: none;
+	transition: background-color, var(--button-anim-time) ease;
+}
+
+button:disabled {
+	background-color: gray;	
+}
+
+button:hover {
+	/* Описание действий при наведении на кнопку */
+
+	background-color: color-mix(in srgb, var(--button-color), black 5%);
+}
+
+button:active {
+	/* Описание действий при нажатии на кнопку */
+
+	background-color: color-mix(in srgb, var(--button-color), black 10%);
+}

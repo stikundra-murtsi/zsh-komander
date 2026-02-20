@@ -1,0 +1,121 @@
+/* #header         - сама голова сайта.
+ * .header_button  - кнопка на голове сайта.
+ * #header_buttons - кнопки на голове сайта.
+ * #page_title     - название страницы.
+ * #site_general   - название сайта.
+ * */
+
+@font-face {
+	font-family: "Terminus";
+	src: url('./Terminus.ttf') format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	image-rendering: pixelated;
+	font-smooth: never;
+	font-display: swap;
+}
+
+:root {
+	/* Настройка головы сайта */
+
+	--header-max-top: 0; /* Граница где клейкость пропадает */
+	--header-color: #E1D5D9; /* Цвет головы */
+	--header-text-color: #1C252C; /* Цвет текста */
+	--header-shadow-pos: 0px 0px 5px; /* Позиция тени головы */
+	--header-shadow-color: rgba(0, 0, 0, 0.15); /* Цвет тени головы */
+	--header-padding: 10px; /* Внутренний отступ головы */
+	--header-margin: 10px; /* Внешний отступ головы */
+	--header-font-size: 28px; /* Размер шрифта в голове */
+	--header-gap: 10px; /* Отступ между элементами головы */
+	--header-border-radius: 14px; /* Скругление углов */
+	--header-font-family: "Terminus"; /* Шрифт головы */
+	
+	/* Настройка остальных элементов головы */
+	--header-addition-color: black; /* Цвет фона для остальных элементов */
+	--header-addition-opacity: 0.5; /* Прозрачность для остальных элементов */
+}
+
+#header {
+	/* Описание области головы сайта */
+
+	top: var(--header-max-top);
+	box-shadow: var(--header-shadow-pos) var(--header-shadow-color);
+	background-color: var(--header-color);
+	color: var(--header-text-color);
+	padding-left: var(--header-padding);
+	padding-right: var(--header-padding);
+	margin: var(--header-margin);
+	font-size: var(--header-font-size);
+	gap: var(--header-gap);
+	border-radius: var(--header-border-radius);	
+	font-family: var(--header-font-family);
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	position: sticky;
+	z-index: 15;
+}
+
+#page_title {
+	display: block;
+}
+
+#header_buttons {
+	/* Описание области кнопок головы сайта */
+	
+	font-family: var(--header-font-family);
+	gap: var(--header-gap);
+	margin-left: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.header_button {
+	/* Описание кнопок головы сайта */
+
+	font-size: var(--header-font-size);
+	font-family: var(--header-font-family);
+}
+
+#site_general {
+	/* Описание названия сайта */
+
+	width: 5em;
+	transition: opacity 0.1s ease;
+	opacity: 0.8;
+	border-radius: 14px;
+}
+
+#site_general:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+
+#site_general:active {
+	opacity: 0.9;
+}
+
+/* Совместимость */
+
+@media (max-width: 800px) {
+	#header {
+		padding: var(--header-padding); /* Внутренние отступы головы по всем краям */
+	}
+
+	#page_title {
+		display: none;
+	}
+}
+
+/* Максимальный размер экрана при котором видно название страницы */
+
+@media (max-width: 650px) {
+	#header_buttons {
+		flex-direction: column; /* Расстановка кнопок в колонку */
+	}
+
+	#site_general::after {
+		content: "_";
+	}
+}

@@ -1,0 +1,88 @@
+@font-face {
+	font-family: "Terminus";
+	src: url('Terminus.ttf') format("ttf");
+	font-weight: normal;
+	font-style: normal;
+	image-rendering: pixelated;
+	font-smooth: never;
+	font-display: swap;
+}
+
+a {
+	color: #46656F;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #F6F2F6;
+}
+
+@media (min-width: 800px) {
+	.card_gen_2 {
+		grid-row: 1 / 2 span;
+		grid-column: 2;
+	}
+}
+
+.arrower::before {
+	content: ">";
+	display: inline-block;
+	z-index: 15;
+}
+
+hr {
+	margin-left: 14px;
+	margin-right: 14px;
+	border-radius: 1px;
+	color: #58545B;
+}
+
+.code {
+	background-color: color-mix(in srgb, #E1D5D9, black 10%);
+	border-radius: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+	transition: background-color ease 0.1s;
+}
+
+.card:hover .code {
+	background-color: color-mix(in srgb, #E1D5D9, black 15%);
+}
+
+summary {
+	list-style: none;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+summary::-webkit-details-marker {
+	display: none;
+}
+
+summary:hover {
+	cursor: pointer;
+}
+
+summary::before {
+	content: ">";
+	display: inline-block;
+	margin-right: 0.5em;
+	z-index: 1;
+}
+
+details[open] summary::before {
+	transform: rotate(90deg);
+}
+
+.dwn_button {
+	font-size: 24px;
+	font-family: "Terminus";
+	margin-left: auto;
+}
+
+.dwn_btn_div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}

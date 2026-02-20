@@ -1,0 +1,85 @@
+/* .card       - сама карточка.
+ * #helper     - контейнер с карточками.
+ * .card_title - наименование карточки.
+ * */
+
+@font-face {
+	font-family: "Terminus";
+	src: url('Terminus.ttf') format("ttf");
+	font-weight: normal;
+	font-style: normal;
+	image-rendering: pixelated;
+	font-smooth: never;
+	font-display: swap;
+}
+
+:root {
+	/* Настройка карточки */
+
+	--card-color: #E1D5D9; /* Цвет карточки */
+	--card-border-radius: 14px; /* Значение скругления краев карточки */
+	--card-padding: 10px; /* Внутреннее растояние содержимого карточки от краев */
+	--card-font-family: "Terminus"; /* Шрифт карточки */
+	--card-font-size: 22px; /* Размер шрифта карточки */
+	--card-title-size: 28px; /* Размер наименования карточки */
+	--card-text-color: #1C252C; /* Цвет текста на карточке */
+	--card-anim-speed: 0.1s; /* Скорость анимации карточки */
+
+	/* Настройка контейнера с карточками */
+
+	--helper-columns: 1fr 1fr; /* Колонки контейнера */
+	--helper-gap: 10px; /* Расстояние между карточками */
+	--helper-margin: 10px; /* Растояние между контейнером и экраном */
+	--helper-mobile-columns: 1fr; /* Колонки контейнера на малом экране */
+}
+
+.card {
+	/* Описание внешнего вида карточки */
+	
+	background-color: var(--card-color);
+	border-radius: var(--card-border-radius);
+	padding: var(--card-padding);
+	transition: background-color var(--card-anim-speed) ease-in-out;
+
+	/* Описание текста карточки */
+	
+	font-size: var(--card-font-size);
+	font-family: var(--card-font-family);
+	color: var(--card-text-color);
+
+}
+
+.card:hover {
+	background-color: color-mix(in srgb, var(--card-color), black 5%); /* Затеменние при наведении */
+}
+
+.card_title {
+	/* Описание наименования карточки */
+	
+	color: var(--card-text-color);
+	font-size: var(--card-title-size);
+	font-family: var(--card-font-family);
+}
+
+#helper {
+	/* Описание контейнера */
+
+	display: grid;
+	grid-template-columns: var(--helper-columns);
+	gap: var(--helper-gap);
+	margin: var(--helper-margin);
+}
+
+/* Совместимость */
+
+@media (max-width: 800px) {
+	#helper {
+		grid-template-columns: var(--helper-mobile-columns);
+	}
+}
+
+@media (max-width: 650px) {
+	:root {
+		--card-title-size: 24px;
+	}
+}
