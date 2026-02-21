@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+	<title>zsh-komander</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="img/zsh-komander-ico.png" sizes="32x32">
+
+	<link rel="stylesheet" href="styles/buttons.css">
+	<link rel="stylesheet" href="styles/cards.css">
+	<link rel="stylesheet" href="styles/head.css">
+	<link rel="stylesheet" href="styles/other.css">
+</head>
+
+<body>
+	<div id="header">
+		<img id="site_general" alt="komander" src="img/zsh-komander-to-site.png">
+		<p id="page_title">Загрузка</p>
+		<div id="header_buttons">
+			<button class="header_button" id="goto_download">Загрузка</button>
+		</div>
+	</div>
+	<div id="helper">
+		<div class="card">
+			<h3>Последняя версия zsh-komander</h3>
+			<div class="dwn_btn_div">
+				<p id="latest_ver">Unknouwn...</p>
+				<button type="button" id="dwn_latest" class="dwn_button">Скачать</button>
+			</div>
+		</div>
+		<div class="card" id="oth_dwn_card">
+			<h3>Другие версии zsh-komander</h3>
+		</div>
+	</div>
+</body>
+
+<script type="module" src="src/goto.js"></script>
+<script type="module" src="src/downloads_github_auto.js"></script>
